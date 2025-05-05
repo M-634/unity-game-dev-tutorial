@@ -57,7 +57,7 @@ C:\Users\（ユーザー名）\Documents\unity-game-dev-tutorial\
 
 - スクリプトファイルの編集は必ず **Visual Studio** で行ってください！（Unity側と連動します）
 
-🔗 リンク集
+## 🔗 参考リンク集
 
 - [Unity ユーザーマニュアル 2022.3 (LTS)](https://docs.unity3d.com/ja/current/Manual/UnityManual.html)
 - [Unity Scripting Reference](https://docs.unity3d.com/ja/2022.3/ScriptReference/index.html)
