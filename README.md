@@ -50,7 +50,7 @@ C:\Users\（ユーザー名）\Documents\unity-game-dev-tutorial\
 
 ## 🧭 授業の進め方
 
-- 各週の内容・コード・課題は [Wikiページ](https://github.com/ユーザー名/unity-game-dev-tutorial/wiki) に掲載してます。
+- 各週の内容・コード・課題は [Wikiページ](https://github.com/M-634/unity-game-dev-tutorial/wiki) に掲載してます。
   詳細はリンクからwikiページを見てください！
 
 ## 📌 注意
