@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace M634.Unity_Game_Dev_Tutorial
+namespace Unity_Game_Dev_Tutorial.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class PlayerMovement : MonoBehaviour
