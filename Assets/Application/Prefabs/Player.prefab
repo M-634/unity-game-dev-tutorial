@@ -221,4 +221,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _muzzle: {fileID: 6661397073600858911}
   _bulletPrefab: {fileID: 3631378915843692793, guid: 092586ad77039044abef95ffaa83fb9e, type: 3}
-  _bulletSpeed: 1000
+  _bulletSpeed: 10

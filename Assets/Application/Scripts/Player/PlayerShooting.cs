@@ -10,9 +10,9 @@ namespace Unity_Game_Dev_Tutorial.Player
         
         [SerializeField]
         private GameObject _bulletPrefab;
-
+        
         [SerializeField]
-        private float _bulletSpeed = 1000f;
+        private float _bulletSpeed = 10f;
         
         private void Start()
         {
@@ -29,19 +29,24 @@ namespace Unity_Game_Dev_Tutorial.Player
 
         private void Update()
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                GameObject bullet = Instantiate(_bulletPrefab, _muzzle.position, Quaternion.identity);
-                
-                if(bullet.TryGetComponent(out Rigidbody2D rigidBody2D))
-                {
-                    Vector2 force = _muzzle.up * _bulletSpeed;
-                    rigidBody2D.AddForce(force);
-                }
-                else
-                {
-                    Debug.LogWarning($"{bullet.name} has no Rigidbody2D component");
-                }
+                Shoot();
+            }
+        }
+
+        private void Shoot()
+        {
+            GameObject bullet = Instantiate(_bulletPrefab, _muzzle.position, Quaternion.identity);
+            
+            if(bullet.TryGetComponent(out Rigidbody2D rigidBody2D))
+            {
+                Vector2 velocity = _muzzle.up * _bulletSpeed;
+                rigidBody2D.velocity = velocity;
+            }
+            else
+            {
+                Debug.LogWarning($"{bullet.name} has no Rigidbody2D component");
             }
         }
     }
