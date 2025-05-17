@@ -171,3 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed400027c1114ae9a4d625fe65f72849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _damageAmount: 10
+  _isDestroyedOnCollisionEnemy: 1
