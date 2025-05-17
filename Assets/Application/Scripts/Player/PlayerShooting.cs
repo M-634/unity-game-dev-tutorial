@@ -32,7 +32,6 @@ namespace Unity_Game_Dev_Tutorial.Player
             if (Input.GetKeyDown("space"))
             {
                 GameObject bullet = Instantiate(_bulletPrefab, _muzzle.position, Quaternion.identity);
-                bullet.name = "Bullet";
                 
                 if(bullet.TryGetComponent(out Rigidbody2D rigidBody2D))
                 {
