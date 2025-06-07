@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity_Game_Dev_Tutorial.UI;
+using UnityEngine;
 
 namespace Unity_Game_Dev_Tutorial.Enemy
 {
@@ -6,20 +7,28 @@ namespace Unity_Game_Dev_Tutorial.Enemy
     public class EnemyHealth : MonoBehaviour
     {
         [SerializeField] 
-        private int _health = 100;
-
-        [SerializeField]
+        private int _maxHp = 100;
+        
+        private int _currentHp;
         private bool _isDead = false;
+
+        private void Start()
+        {
+            _currentHp = _maxHp;
+        }
         
         public void OnDamaged(int damageAmount)
         {
             if(_isDead) return;
             
-            _health -= damageAmount;
+            DamagePopup.Create(transform.position, damageAmount);   
+            _currentHp -= damageAmount;
+            
 
-            if (_health <= 0)
+            if (_currentHp <= 0)
             {
                 _isDead = true;
+                EnemyKillCounter.Instance.AddKillCount();
                 Destroy(gameObject);
             }
         }
