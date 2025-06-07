@@ -10,13 +10,9 @@ namespace Unity_Game_Dev_Tutorial.Enemy
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.CompareTag("Player"))
+            if (collision.TryGetComponent<PlayerHealth>(out var playerHealth))
             {
-                PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
-                if (playerHealth != null)
-                {
-                    playerHealth.TakeDamage(_damageAmount);
-                }
+                playerHealth.TakeDamage(_damageAmount);
             }
         }
     }

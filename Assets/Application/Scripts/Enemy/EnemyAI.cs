@@ -14,6 +14,7 @@ namespace Unity_Game_Dev_Tutorial.Enemy
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
             if (playerObj == null)
             {
+                return;
                 throw new NullReferenceException("playerObj is null");
             }
             

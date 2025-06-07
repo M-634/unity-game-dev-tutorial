@@ -8,15 +8,15 @@ namespace Unity_Game_Dev_Tutorial.Player
         private int _maxHp = 5;
 
         [SerializeField]
-        private PlayerHealthUI _healthUI;
-
+        private PlayerHealthUI _playerHealthUI;
+        
         private int _currentHp;
         private bool _isDead;
         
         void Start()
         {
             _currentHp = _maxHp;
-            _healthUI.SetHp(_currentHp, _maxHp);
+            _playerHealthUI.SetHp(_currentHp, _maxHp);
         }
 
         public void TakeDamage(int damage)
@@ -24,15 +24,13 @@ namespace Unity_Game_Dev_Tutorial.Player
             if(_isDead) return;
             
             _currentHp -= damage;
-            _currentHp = Mathf.Max(_currentHp, 0);
-
-            _healthUI.SetHp(_currentHp, _maxHp);
+            _playerHealthUI.SetHp(_currentHp, _maxHp);
 
             if (_currentHp <= 0)
             {
                 _isDead = true;
+                Destroy(gameObject);
                 Debug.Log("Game Over!");
-                gameObject.SetActive(false); 
             }
         }
     }

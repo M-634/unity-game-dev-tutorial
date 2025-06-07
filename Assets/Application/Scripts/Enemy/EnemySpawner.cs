@@ -11,17 +11,26 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     private Transform[] _spawnPoints;
 
-    private float timer;
+    private float _timer;
+    
+    private Transform _player;
+
+    private void Start()
+    {
+        _player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        if(_player == null) return;
+        
+        _timer += Time.deltaTime;
 
-        if (timer >= _spawnInterval)
+        if (_timer >= _spawnInterval)
         {
             int rand = Random.Range(0, _spawnPoints.Length);
             Instantiate(_enemyPrefab, _spawnPoints[rand].position, Quaternion.identity);
-            timer = 0f;
+            _timer = 0f;
         }
     }
 }
