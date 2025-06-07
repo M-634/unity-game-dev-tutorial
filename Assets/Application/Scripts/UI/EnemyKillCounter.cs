@@ -1,12 +1,12 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using TMPro;
+using UnityEngine;
 
 namespace Unity_Game_Dev_Tutorial.UI
 {
     public class EnemyKillCounter : MonoBehaviour
     {
         [SerializeField] 
-        private Text _killCountText;
+        private TextMeshProUGUI _killCountText;
         
         private int _killCount;
         

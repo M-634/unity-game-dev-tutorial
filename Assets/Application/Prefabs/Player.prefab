@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody2D: {fileID: 8868089023087158431}
-  _moveType: 1
+  _moveType: 0
   _moveSpeed: 10
 --- !u!61 &3330035907078676742
 BoxCollider2D:

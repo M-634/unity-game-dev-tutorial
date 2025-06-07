@@ -16,7 +16,7 @@ namespace Unity_Game_Dev_Tutorial.UI
         
         public static void Create(Vector3 position, int damage)
         {
-            var resourcePrefab = Resources.Load<GameObject>("DamegePopup"); 
+            var resourcePrefab = Resources.Load<GameObject>("DamagePopup"); 
             GameObject popup = Instantiate(resourcePrefab, position, Quaternion.identity);
             popup.GetComponent<DamagePopup>().SetDamage(damage);
         }
