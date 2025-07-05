@@ -192,6 +192,37 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &1806079765247256629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6821507769766994487}
+  m_Layer: 0
+  m_Name: 'AutoSkillMuzzle '
+  m_TagString: Untagged
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6821507769766994487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806079765247256629}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 595847463898276255}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102499013107155030
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,6 +345,7 @@ GameObject:
   - component: {fileID: 3330035907078676742}
   - component: {fileID: 4759729049575318209}
   - component: {fileID: 6796342989714533021}
+  - component: {fileID: 8911786457018356314}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -335,6 +367,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6661397073600858911}
+  - {fileID: 6821507769766994487}
   - {fileID: 6130269118940800590}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -506,3 +539,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 100
   _playerHealthUI: {fileID: 3503797774992932865}
+--- !u!114 &8911786457018356314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5966831773412465547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81f19572768abec4092bec434632bc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skills:
+  - {fileID: 11400000, guid: 39e2ead8ccca9e14294cc2728ca2d09e, type: 2}
+  _muzzle: {fileID: 6821507769766994487}

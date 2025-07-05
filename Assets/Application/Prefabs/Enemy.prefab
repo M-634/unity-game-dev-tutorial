@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHp: 20
   _spriteRenderer: {fileID: 6327164636052817604}
+  _expPickupItemPrefab: {fileID: 7296368349308551299, guid: 960e85f598ce6c74e90e292753dc51f4, type: 3}
 --- !u!114 &1348188032798821909
 MonoBehaviour:
   m_ObjectHideFlags: 0

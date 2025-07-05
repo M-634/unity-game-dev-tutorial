@@ -44,7 +44,7 @@ namespace Unity_Game_Dev_Tutorial.Player
         {
             GameObject bullet = Instantiate(skill.bulletPrefab, _muzzle.position, Quaternion.identity);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.velocity = skill.direction.normalized *skill.GetSpeed(currentLevel);
+            rb.velocity = skill.direction.normalized * skill.GetSpeed(currentLevel);
         }
     }    
 }

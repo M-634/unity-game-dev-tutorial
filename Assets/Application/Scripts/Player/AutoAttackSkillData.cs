@@ -8,10 +8,7 @@ namespace Unity_Game_Dev_Tutorial.Player
     {
         public string skillName;
         public GameObject bulletPrefab;
-        public float interval;
-        public float speed;
         public Vector2 direction;
-        
         public List<float> intervalPerLevels;
         public List<float> speedPerLevels;
         
