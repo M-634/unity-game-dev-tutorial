@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc9b8b1438214af2b1ed6aebf9999fa5, type: 3}
+  m_Name: AutoAttackSkill
+  m_EditorClassIdentifier: 
+  skillName: AutoAttackSample
+  bulletPrefab: {fileID: 3631378915843692793, guid: 7499784b02b713840a57c5a7f33a752a, type: 3}
+  direction: {x: 0, y: 1}
+  intervalPerLevels:
+  - 1
+  - 0.5
+  - 0.25
+  - 0.1
+  - 0.05
+  speedPerLevels:
+  - 5
+  - 10
+  - 30
+  - 80
+  - 100
