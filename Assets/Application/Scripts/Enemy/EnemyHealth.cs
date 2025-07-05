@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Unity_Game_Dev_Tutorial.Enemy
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(BoxCollider2D))]
+    [RequireComponent(typeof(Rigidbody2D))]
     public class EnemyHealth : MonoBehaviour
     {
         [SerializeField] 
@@ -12,6 +12,9 @@ namespace Unity_Game_Dev_Tutorial.Enemy
         
         [SerializeField]
         private SpriteRenderer _spriteRenderer;
+        
+        [SerializeField]
+        private ExpPickup _expPickupItemPrefab;
         
         private int _currentHp;
         private bool _isDead = false;
@@ -31,11 +34,27 @@ namespace Unity_Game_Dev_Tutorial.Enemy
             
             if (_currentHp <= 0)
             {
-                _isDead = true;
-                EnemyKillCounter.Instance.AddKillCount();
-                Destroy(gameObject);
+                OnDead();
             }
         }
+
+        private void OnDead()
+        {
+            _isDead = true;
+
+            if (EnemyKillCounter.Instance != null)
+            {
+                EnemyKillCounter.Instance.AddKillCount();
+            }
+
+            if (_expPickupItemPrefab != null)
+            {
+               Instantiate(_expPickupItemPrefab, transform.position, Quaternion.identity);    
+            }
+            
+            Destroy(gameObject);
+        }
+        
 
         private IEnumerator Flash()
         {

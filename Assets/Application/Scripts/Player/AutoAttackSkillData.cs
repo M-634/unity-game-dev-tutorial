@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Unity_Game_Dev_Tutorial.Player
 {
@@ -10,5 +11,18 @@ namespace Unity_Game_Dev_Tutorial.Player
         public float interval;
         public float speed;
         public Vector2 direction;
+        
+        public List<float> intervalPerLevels;
+        public List<float> speedPerLevels;
+        
+        public float GetInterval(int level)
+        {
+            return intervalPerLevels[Mathf.Clamp(level - 1, 0, intervalPerLevels.Count - 1)];
+        }
+
+        public float GetSpeed(int level)
+        {
+            return speedPerLevels[Mathf.Clamp(level - 1, 0, speedPerLevels.Count - 1)];
+        }
     }
 }
