@@ -1357,7 +1357,7 @@ PrefabInstance:
     - target: {fileID: 8911786457018356314, guid: 26a2b898e72336f4c94b483cf0613857, type: 3}
       propertyPath: _skills.Array.data[0]
       value: 
-      objectReference: {fileID: 11400000, guid: 39e2ead8ccca9e14294cc2728ca2d09e, type: 2}
+      objectReference: {fileID: 11400000, guid: 80a6d54612657f94f8cb0ed87cf69617, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
