@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Unity_Game_Dev_Tutorial
@@ -22,7 +23,11 @@ namespace Unity_Game_Dev_Tutorial
 
         public static void QuitGame()
         {
+#if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+#else
             Application.Quit();
+#endif
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Unity_Game_Dev_Tutorial
 {
@@ -10,22 +11,37 @@ namespace Unity_Game_Dev_Tutorial
 
         [SerializeField]
         private TextMeshProUGUI _timeText;
+        
+        [SerializeField]
+        private Button _loadGameButton;
+        
+        [SerializeField]
+        private Button _loadTitleButton;
 
         private void Start()
         {
             int kills = GameManager.Instance?.KillCount ?? 0;
             float time = GameManager.Instance?.ElapsedTime ?? 0f;
 
-            _killText.text = $"撃破数: {kills}";
-            _timeText.text = $"生存時間: {Mathf.FloorToInt(time / 60):00}:{Mathf.FloorToInt(time % 60):00}";
+            _killText.text = $"Defeat Enemy Count: {kills}";
+            _timeText.text = $"Survival Time Count : {Mathf.FloorToInt(time / 60):00}:{Mathf.FloorToInt(time % 60):00}";
+            
+            _loadGameButton.onClick.AddListener(OnRetryButton);
+            _loadTitleButton.onClick.AddListener(OnTitleButton);
+        }
+        
+        private void OnDestroy()
+        {
+            _loadGameButton.onClick.RemoveListener(OnRetryButton);
+            _loadTitleButton.onClick.RemoveListener(OnTitleButton);
         }
 
-        public void OnRetryButton()
+        private void OnRetryButton()
         {
             SceneLoader.LoadGame();
         }
 
-        public void OnTitleButton()
+        private void OnTitleButton()
         {
             SceneLoader.LoadTitle();
         }
