@@ -12,6 +12,7 @@
 
         [SerializeField]
         private float _maxTime = 600f; // 10分
+        public float MaxTime => _maxTime;
 
         private void Awake()
         {
