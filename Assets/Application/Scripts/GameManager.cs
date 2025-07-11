@@ -45,17 +45,18 @@
             KillCount++;
         }
 
-        public void EndGame(bool timeUp)
+        public void EndGame(bool isTimeUp)
         {
-            CurrentState = GameState.GameOver;
+            CurrentState = isTimeUp ? GameState.TimeUp : GameState.GameOver;
             SceneManager.LoadScene("ResultScene");
         }
     }
 
     public enum GameState
     {
-        Title,
-        Playing,
-        GameOver
+        Title = 0,
+        Playing = 1,
+        GameOver = 2,
+        TimeUp = 3
     }
 }

@@ -28,10 +28,15 @@ namespace Unity_Game_Dev_Tutorial.Player
 
             if (_currentHp <= 0)
             {
-                _isDead = true;
-                Destroy(gameObject);
-                Debug.Log("Game Over!");
+                OnDead();
             }
+        }
+
+        private void OnDead()
+        {
+            _isDead = true;
+            GameManager.Instance?.EndGame(false);
+            Destroy(gameObject);
         }
     }
 }
