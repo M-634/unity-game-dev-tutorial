@@ -176,6 +176,7 @@ MonoBehaviour:
   _maxHp: 20
   _spriteRenderer: {fileID: 6327164636052817604}
   _expPickupItemPrefab: {fileID: 3312318146075785325, guid: 6d2bf52a282a8b145a9e36a4b69e54a3, type: 3}
+  _onDeadEffectPrefab: {fileID: 113998120474613873, guid: b2e18507a0951d341b2c942f05f42e57, type: 3}
 --- !u!114 &1348188032798821909
 MonoBehaviour:
   m_ObjectHideFlags: 0

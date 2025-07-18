@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Unity_Game_Dev_Tutorial.UI;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Unity_Game_Dev_Tutorial.Enemy
 {
@@ -15,6 +16,9 @@ namespace Unity_Game_Dev_Tutorial.Enemy
         
         [SerializeField]
         private ExpPickup _expPickupItemPrefab;
+        
+        [SerializeField]
+        private GameObject _onDeadEffectPrefab;
         
         private int _currentHp;
         private bool _isDead = false;
@@ -47,6 +51,11 @@ namespace Unity_Game_Dev_Tutorial.Enemy
                 EnemyKillCounter.Instance.AddKillCount();
             }
 
+            if (_onDeadEffectPrefab != null)
+            {
+                Instantiate(_onDeadEffectPrefab, transform.position, Quaternion.identity);
+            }
+            
             if (_expPickupItemPrefab != null)
             {
                Instantiate(_expPickupItemPrefab, transform.position, Quaternion.identity);    
