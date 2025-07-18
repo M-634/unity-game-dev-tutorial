@@ -20,8 +20,14 @@ namespace Unity_Game_Dev_Tutorial
 
         private void Start()
         {
-            int kills = GameManager.Instance?.KillCount ?? 0;
-            float time = GameManager.Instance?.ElapsedTime ?? 0f;
+            int kills = 0;
+            float time = 0f;
+            
+            if (GameManager.Instance != null)
+            { 
+                kills = GameManager.Instance.KillCount;
+                time = GameManager.Instance.ElapsedTime;
+            }
 
             _killText.text = $"Defeat Enemy Count: {kills}";
             _timeText.text = $"Survival Time Count : {Mathf.FloorToInt(time / 60):00}:{Mathf.FloorToInt(time % 60):00}";
