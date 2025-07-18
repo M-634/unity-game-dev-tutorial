@@ -8,6 +8,9 @@ namespace Unity_Game_Dev_Tutorial.Player
         public static PlayerLevelManager Instance { get; private set; }
 
         [SerializeField] private TextMeshProUGUI _levelText;
+        [SerializeField] private Animator _anim;
+        
+        private static readonly int Play = Animator.StringToHash("Play");
 
         private int _level = 1;
         private int _exp = 0;
@@ -42,6 +45,8 @@ namespace Unity_Game_Dev_Tutorial.Player
             _exp = 0;
             _expToNext += 10;
             Debug.Log("Level Up! 現在のレベル: " + _level);
+            
+            _anim.SetTrigger(Play);
         }
 
         private void UpdateUI()
