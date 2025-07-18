@@ -34,6 +34,11 @@ namespace Unity_Game_Dev_Tutorial.UI
         {
             _killCount++;
             _killCountText.text = _killCount.ToString();
+
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.AddKill();
+            }
         }
     }
 }
