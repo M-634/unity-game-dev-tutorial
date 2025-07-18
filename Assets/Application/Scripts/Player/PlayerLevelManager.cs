@@ -49,11 +49,22 @@ namespace Unity_Game_Dev_Tutorial.Player
             _anim.SetTrigger(Play);
         }
 
-        private void UpdateUI()
+        public void UpdateUI()
         {
             if (_levelText != null)
             {
                 _levelText.text = $"Lv. {_level}";
+            }
+        }
+
+        public void ResetLevel()
+        {
+            _level = 1;
+            _exp = 0;
+            
+            if (_levelText != null)
+            {
+                _levelText.text = string.Empty;
             }
         }
     }

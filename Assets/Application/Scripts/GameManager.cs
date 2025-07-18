@@ -1,4 +1,6 @@
-﻿namespace Unity_Game_Dev_Tutorial
+﻿using Unity_Game_Dev_Tutorial.Player;
+
+namespace Unity_Game_Dev_Tutorial
 {
     using UnityEngine;
     using UnityEngine.SceneManagement;
@@ -37,6 +39,12 @@
         {
             ElapsedTime = 0f;
             KillCount = 0;
+
+            if (PlayerLevelManager.Instance != null)
+            {
+                PlayerLevelManager.Instance.UpdateUI();
+            }
+            
             CurrentState = GameState.Playing;
         }
 
@@ -48,6 +56,12 @@
         public void EndGame(bool isTimeUp)
         {
             CurrentState = isTimeUp ? GameState.TimeUp : GameState.GameOver;
+            
+            if (PlayerLevelManager.Instance != null)
+            {
+                PlayerLevelManager.Instance.ResetLevel();
+            }
+            
             SceneManager.LoadScene("ResultScene");
         }
     }
