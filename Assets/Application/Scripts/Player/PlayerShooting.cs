@@ -1,4 +1,5 @@
 using System;
+using Unity_Game_Dev_Tutorial.Sound;
 using UnityEngine;
 
 namespace Unity_Game_Dev_Tutorial.Player
@@ -47,6 +48,11 @@ namespace Unity_Game_Dev_Tutorial.Player
             else
             {
                 Debug.LogWarning($"{bullet.name} has no Rigidbody2D component");
+            }
+
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlaySe(SoundDataUtility.KeyConfig.Se.Shoot);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Unity_Game_Dev_Tutorial.Player;
+using Unity_Game_Dev_Tutorial.Sound;
 
 namespace Unity_Game_Dev_Tutorial
 {
@@ -46,6 +47,11 @@ namespace Unity_Game_Dev_Tutorial
             }
             
             CurrentState = GameState.Playing;
+
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayBGM(SoundDataUtility.KeyConfig.Bgm.InGame);
+            }
         }
 
         public void AddKill()
@@ -60,6 +66,11 @@ namespace Unity_Game_Dev_Tutorial
             if (PlayerLevelManager.Instance != null)
             {
                 PlayerLevelManager.Instance.ResetLevel();
+            }
+            
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.StopBGM();
             }
             
             SceneManager.LoadScene("ResultScene");
