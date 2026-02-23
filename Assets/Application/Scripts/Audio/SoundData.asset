@@ -17,9 +17,11 @@ MonoBehaviour:
     _type: 0
     _isLoop: 1
     _playOnAwake: 0
+    _volume: 0.144
     _clip: {fileID: 8300000, guid: bb586754c0bbe4341a732bb96d799942, type: 3}
   - _key: Shoot
     _type: 1
     _isLoop: 0
     _playOnAwake: 0
+    _volume: 0.326
     _clip: {fileID: 8300000, guid: c005cd66e5bfc0d4da65d3e39b42b2c0, type: 3}
