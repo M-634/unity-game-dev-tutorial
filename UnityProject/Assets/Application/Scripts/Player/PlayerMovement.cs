@@ -49,7 +49,7 @@ namespace Unity_Game_Dev_Tutorial.Player
             
             Vector2 velocity = new Vector2(h, v).normalized;
          
-            _rigidbody2D.velocity = velocity * _moveSpeed;
+            _rigidbody2D.linearVelocity = velocity * _moveSpeed;
         }
     }
 }

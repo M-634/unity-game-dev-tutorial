@@ -43,7 +43,7 @@ namespace Unity_Game_Dev_Tutorial.Player
             if(bullet.TryGetComponent(out Rigidbody2D rigidBody2D))
             {
                 Vector2 velocity = _muzzle.up * _bulletSpeed;
-                rigidBody2D.velocity = velocity;
+                rigidBody2D.linearVelocity = velocity;
             }
             else
             {
